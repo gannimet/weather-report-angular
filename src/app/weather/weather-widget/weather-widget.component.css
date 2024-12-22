@@ -1,0 +1,30 @@
+.weather-widget {
+  background: linear-gradient(0deg, rgba(0,149,255,1) 0%, rgba(0,80,150,1) 100%);
+  filter: drop-shadow(9px 10px 17px #a3aeb8);
+  padding: 16px;
+  border-radius: 8px;
+  color: #fff;
+
+  & .input-area {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  & .weather-display {
+    & .wind {
+      & .wind-direction {
+        & .needle {
+          background-image: url('/assets/images/compass-needle.svg');
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          display: inline-block;
+          width: 50px;
+          aspect-ratio: 1;
+        }
+      }
+    }
+  }
+}

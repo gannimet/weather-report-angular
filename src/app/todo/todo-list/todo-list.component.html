@@ -1,0 +1,20 @@
+@let todoList = todoService.todos();
+
+@if (todoList.length > 0) {
+  <ul class="todo-list">
+    @for (todo of todoList; track todo.id) {
+      <li class="todo-list-item">
+        <h3>{{ todo.title }}</h3>
+        <p>{{ todo.description }}</p>
+        <div>Due: {{ todo.dueDate | date }}</div>
+
+        <div class="actions">
+          <button (click)="editTodo.emit(todo)">Edit</button>
+          <button (click)="todoService.removeTodo(todo.id)">Remove</button>
+        </div>
+      </li>
+    }
+  </ul>
+} @else {
+  <p>All done, no TODOs in the list!</p>
+}
