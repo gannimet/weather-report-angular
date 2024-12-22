@@ -1,15 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { WeatherWidgetComponent } from '../../weather/weather-widget/weather-widget.component';
 import { CitySelectorComponent } from "../../weather/city-selector/city-selector.component";
-import { City } from '../../weather/types/weather-types';
-
-const cities: City[] = [
-  { name: 'Berlin', latitude: 52.52, longitude: 13.41 },
-  { name: 'Hamburg', latitude: 53.55, longitude: 9.97 },
-  { name: 'München', latitude: 48.13, longitude: 11.58 },
-  { name: 'Köln', latitude: 50.94, longitude: 6.96 },
-  { name: 'Stuttgart', latitude: 48.78, longitude: 9.18 }
-];
+import { City } from '../../weather/model/weather-types';
 
 @Component({
   selector: 'app-weather-page',
@@ -19,5 +11,9 @@ const cities: City[] = [
   styleUrl: './weather-page.component.css'
 })
 export class WeatherPageComponent {
+  readonly selectedCity = signal<City | undefined>(undefined);
 
+  citySelected(city: City) {
+    this.selectedCity.set(city);
+  }
 }

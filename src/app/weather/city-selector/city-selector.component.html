@@ -1,1 +1,5 @@
-<p>city-selector works!</p>
+<select [ngModel]="selectedCity" (ngModelChange)="selectedCityChanged($event)">
+  @for (city of cities; track city.name) {
+    <option [ngValue]="city">{{ city.name }}</option>
+  }
+</select>
