@@ -1,7 +1,15 @@
 <div class="weather-page">
-  <app-city-selector (citySelected)="citySelected($event)"></app-city-selector>
+  <div class="city-selection">
+    <app-city-selector
+      class="city-selector"
+      (citySelected)="citySelected($event)"
+    ></app-city-selector>
+  </div>
 
   @if (selectedCity(); as selectedCity) {
-    <app-weather-widget class="widget" [selectedCity]="selectedCity"></app-weather-widget>
+    <app-weather-widget
+      class="widget"
+      [selectedCity]="selectedCity"
+    ></app-weather-widget>
   }
 </div>

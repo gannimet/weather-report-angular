@@ -1,9 +1,9 @@
 @if (weatherData(); as weatherData) {
   <div class="weather-widget">
-    <div class="temperature">{{ weatherData.temperature | temperatureCelsius }}</div>
+    <div class="temperature">Temperatur: {{ weatherData.temperature | temperatureCelsius }}</div>
 
     <div class="wind">
-      <div class="wind-speed">{{ weatherData.wind_speed_10 | windSpeedKph }}</div>
+      <div class="wind-speed">Windgeschwindigkeit: {{ weatherData.wind_speed_10 | windSpeedKph }}</div>
 
       <div class="wind-direction">
         <span class="needle" [style.transform]="'rotate(' + weatherData.wind_direction_10 + 'deg)'"></span>
