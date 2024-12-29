@@ -1,13 +1,23 @@
 <main class="todo-page">
-  <section class="list-meta">
-    <div class="item-count">{{ todoService.numberOfTodos() }} item(s)</div>
-    
-    <div class="meta-actions">
-      <button (click)="todoDialog.open()">New TODO</button>
-    </div>
-  </section>
+  <div class="list-head">
+    <span class="count">{{ todos().length }} Todos(s)</span>
+    <button>Ein TODO hinzufügen</button>
+  </div>
 
-  <app-todo-list (editTodo)="editTodo($event)"></app-todo-list>
+  <div class="todo-list-wrapper">
+    <h2>Zu erledigen:</h2>
+    <app-todo-list
+      [todos]="notDoneTodos()"
+      (deleteClicked)="deleteClicked($event)"
+      (doneClicked)="doneClicked($event)"
+      showMarkDoneButton
+    />
+
+    <h2>Erledigt:</h2>
+    <app-todo-list
+      [todos]="doneTodos()"
+      (deleteClicked)="deleteClicked($event)"
+      (doneClicked)="doneClicked($event)"
+    />
+  </div>
 </main>
-
-<app-todo-dialog #todoDialog></app-todo-dialog>
