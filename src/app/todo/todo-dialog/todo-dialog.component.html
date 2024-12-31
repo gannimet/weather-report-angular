@@ -1,0 +1,27 @@
+<dialog class="todo-dialog" #todoDialog>
+  <form method="post" (submit)="onSubmit()" [formGroup]="todoForm">
+    <h1 class="header">TODO hinzufügen</h1>
+
+    <section class="main-content">
+      <div class="form-field">
+        <span>Titel:</span>
+        <input name="title" type="text" [formControl]="titleCtrl" />
+      </div>
+
+      <div class="form-field">
+        <span>Beschreibung:</span>
+        <textarea name="description" [formControl]="descriptionCtrl"></textarea>
+      </div>
+
+      <div class="form-field">
+        <span>Fällig am:</span>
+        <input name="due-date" type="date" [formControl]="dueDateCtrl" />
+      </div>
+    </section>
+
+    <div class="button-row">
+      <button type="button" (click)="todoDialog.close()">Abbrechen</button>
+      <button type="submit" [disabled]="todoForm.invalid">Speichern</button>
+    </div>
+  </form>
+</dialog>

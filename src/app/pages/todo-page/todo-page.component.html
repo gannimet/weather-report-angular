@@ -1,7 +1,9 @@
+<app-todo-dialog #todoDialog (saved)="onNewTodoCreated($event)" />
+
 <main class="todos-page">
   <div class="list-head">
     <span class="count">{{ todos().length }} Todo(s)</span>
-    <button>Ein TODO hinzufügen</button>
+    <button (click)="todoDialog.open()">Ein TODO hinzufügen</button>
   </div>
 
   <div class="todo-list-wrapper">
