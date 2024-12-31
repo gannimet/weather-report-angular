@@ -7,7 +7,7 @@ import { TodoListComponent } from '../../todo/todo-list/todo-list.component';
   standalone: true,
   imports: [TodoListComponent],
   templateUrl: './todo-page.component.html',
-  styleUrl: './todo-page.component.css',
+  styleUrl: './todo-page.component.scss',
 })
 export class TodoPageComponent {
   readonly todos = signal<Todo[]>([

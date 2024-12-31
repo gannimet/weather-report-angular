@@ -7,7 +7,7 @@ import { TodoDueDatePipe } from '../pipes/todo-due-date.pipe';
   standalone: true,
   imports: [TodoDueDatePipe],
   templateUrl: './todo-list.component.html',
-  styleUrl: './todo-list.component.css',
+  styleUrl: './todo-list.component.scss',
 })
 export class TodoListComponent {
   readonly todos = input.required<Todo[]>();
