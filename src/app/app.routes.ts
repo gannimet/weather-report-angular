@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { WeatherPageComponent } from './pages/weather-page/weather-page.component';
 import { TodoPageComponent } from './pages/todo-page/todo-page.component';
+import { WeatherPageComponent } from './pages/weather-page/weather-page.component';
 
 export const routes: Routes = [
   {
@@ -9,6 +9,10 @@ export const routes: Routes = [
   },
   {
     path: 'todo',
-    component: TodoPageComponent
-  }
+    component: TodoPageComponent,
+  },
+  {
+    path: '**',
+    redirectTo: '/weather',
+  },
 ];
